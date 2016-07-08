@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.dell_09_027_pc.proyectomuseos.MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/casa_de_Jovellanos"
+    android:background="@drawable/casa_de_jovellanos"
     android:gravity="fill_vertical">
 
 

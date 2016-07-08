@@ -34,7 +34,7 @@
         android:layout_marginTop="2dp"
         android:id="@+id/imageView4"
         android:cropToPadding="false"
-        android:src="@drawable/casa_de_Jovellanos"
+        android:src="@drawable/casa_de_jovellanos"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
