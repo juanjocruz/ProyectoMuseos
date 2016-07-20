@@ -10,6 +10,8 @@
     android:gravity="top"
     >
 
+    <include layout="@layout/activity_logo_titulo_botones"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -53,6 +55,6 @@
 
     </LinearLayout>
 
-    <include layout="@layout/activity_logo_titulo_botones"/>
+
 
 </RelativeLayout>
