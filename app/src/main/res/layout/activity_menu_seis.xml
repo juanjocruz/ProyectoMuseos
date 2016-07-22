@@ -21,17 +21,28 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="false"
         android:layout_marginTop="60dp"
-        android:background="#f80707">
+        android:background="#f9fbdd">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SELECCION"
+            android:id="@+id/seleccion"
+            android:textColor="@color/background_material_dark"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/linearLayoutb"
         android:background="#0ff97d"
-        android:layout_below="@+id/linearLayouttitulo">
+        android:layout_below="@+id/linearLayouttitulo"
+        android:layout_above="@+id/linearLayoutb">
 
         <GridView
             android:layout_width="match_parent"
