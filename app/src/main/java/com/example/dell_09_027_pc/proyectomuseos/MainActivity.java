@@ -1,25 +1,62 @@
 package com.example.dell_09_027_pc.proyectomuseos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
+    private Button nombre;
+    private Button tipo;
+    private Button ubicacion;
 
-
+    ArrayList<Item_Lista> category = new ArrayList<Item_Lista>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initActivity();
+        ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
 
-    }
+        nombre = (Button) findViewById(R.id.buttonNombre);
+        tipo = (Button) findViewById(R.id.buttonTipo);
+        ubicacion = (Button) findViewById(R.id.buttonubicacion);
 
-    public void initActivity(){
-        JSONAsyncTaskActivity miJSONAsincTaskActivity = new JSONAsyncTaskActivity();
+        nombre.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(getApplicationContext(),NombreActivity.class);
+                startActivity(i);
+            }
+        });
+
+        tipo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),TipoActivity.class);
+                startActivity(i);
+            }
+        });
+
+        ubicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),UbicacionActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
     }
 }

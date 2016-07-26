@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Titulo"
-            android:text="Museos de Gijón"
+            android:text="Busqueda por tipo"
             android:textSize="36dp"
             />
 
