@@ -7,23 +7,19 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Item_Lista> category = new ArrayList<Item_Lista>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
+        initActivity();
 
-        datos.add(new Lista_entrada(R.drawable.casa_de_jovellanos, "Museo Jovellanos", "Casa natal de Jovellanos"));
-        datos.add(new Lista_entrada(R.drawable.ferrocarril, "Museo del ferrocarril", "Museo del ferrocarril"));
-        datos.add(new Lista_entrada(R.drawable.pinole, "Museo Piñole", "Pinoteca en la casona natal de Piñole"));
-        datos.add(new Lista_entrada(R.drawable.sidra, "Museo de la sidra", "Museo de la sidra"));
+    }
 
-
-
-
-
+    public void initActivity(){
+        JSONAsyncTaskActivity miJSONAsincTaskActivity = new JSONAsyncTaskActivity();
     }
 }
