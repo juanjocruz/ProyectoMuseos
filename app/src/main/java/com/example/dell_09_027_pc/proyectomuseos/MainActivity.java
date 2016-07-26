@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Item> category = new ArrayList<Item>();
+    ArrayList<Item_Lista> category = new ArrayList<Item_Lista>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
