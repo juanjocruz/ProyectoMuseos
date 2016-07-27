@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -14,8 +15,10 @@ public class MainActivity extends AppCompatActivity
     private Button nombre;
     private Button tipo;
     private Button ubicacion;
+    private ListaDeMuseos mListaDeMuseos;
+    private int LISTADO_DE_MUSEOS=1;
 
-    ArrayList<Item_Lista> category = new ArrayList<Item_Lista>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,13 +32,17 @@ public class MainActivity extends AppCompatActivity
         tipo = (Button) findViewById(R.id.buttonTipo);
         ubicacion = (Button) findViewById(R.id.buttonubicacion);
 
+        JSONAsyncTask miJSONAsyncTask = new JSONAsyncTask();
+
+
         nombre.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 Intent i = new Intent(getApplicationContext(),NombreActivity.class);
-                startActivity(i);
+                i.putExtra("LISTASERIALIZABLE", (Serializable) mListaDeMuseos);
+                startActivityForResult(i,LISTADO_DE_MUSEOS);
             }
         });
 

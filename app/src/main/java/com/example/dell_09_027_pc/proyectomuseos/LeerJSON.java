@@ -1,5 +1,6 @@
 package com.example.dell_09_027_pc.proyectomuseos;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
@@ -19,9 +20,19 @@ public class LeerJSON extends AsyncTask<String, Double, ListaDeMuseos> {
 
 
     private Museo museo;
-    private ListaDeMuseos mListaDeMuseos;
+    private Context myCtx;
+    public static  ListaDeMuseos mListaDeMuseos;
 
     public LeerJSON(ListaDeMuseos listaDeMuseos) {
+        this.mListaDeMuseos = listaDeMuseos;
+    }
+    public LeerJSON(Context ctx){
+        // Now set context
+        this.myCtx = ctx;
+    }
+    public LeerJSON(Context ctx,ListaDeMuseos listaDeMuseos){
+        // Now set context
+        this.myCtx = ctx;
         this.mListaDeMuseos = listaDeMuseos;
     }
     public LeerJSON() {
@@ -33,10 +44,7 @@ public class LeerJSON extends AsyncTask<String, Double, ListaDeMuseos> {
         URL url = null;
         String pagina = "";
 
-
-        ListaDeMuseos listaDeMuseos;
-
-        JSONObject objeto_json = null;
+          JSONObject objeto_json = null;
 
         JSONArray listaJSONMuseos = new JSONArray();
 
@@ -70,7 +78,7 @@ public class LeerJSON extends AsyncTask<String, Double, ListaDeMuseos> {
         }
 
        //    Trasnformar y devolver
-        listaDeMuseos= transformar(listaJSONMuseos);
+        mListaDeMuseos = transformar(listaJSONMuseos);
 
         return new ListaDeMuseos( );
     }
@@ -79,15 +87,20 @@ public class LeerJSON extends AsyncTask<String, Double, ListaDeMuseos> {
     protected void onPostExecute(ListaDeMuseos lista) {
 
      //   Meterlas en el array adapter
+     //   public Lista_adaptador(Context contexto, int R_layout_IdView, ArrayList<?> entradas) {
 
+      /*  mListaDeMuseos.
+        Lista_adaptador lista_adaptador;
+        lista_adaptador.
+        lista_adaptador.notifyDataSetChanged();
         LeerMuseo tareaLeerMuseo= new LeerMuseo(this.museo);
-        tareaLeerMuseo.execute(museo);
+        tareaLeerMuseo.execute(museo);*/
     }
 
     public ListaDeMuseos transformar(JSONArray lista){
-        ListaDeMuseos listaDeMuseos=null;
 
         Museo museo;
+        ListaDeMuseos listaDeMuseos= new ListaDeMuseos();
 
         for (int i =0; i<lista.length();i++) {
 
@@ -107,12 +120,18 @@ public class LeerJSON extends AsyncTask<String, Double, ListaDeMuseos> {
                     museo.setDescripcion(lista.getJSONObject(i).getJSONObject("descripcion").getString("content"));
                     museo.setDescripcion(lista.getJSONObject(i).getJSONObject("tipo").getString("tipo"));
 
+
+                System.out.println(lista.getJSONObject(i).getJSONObject("nombre").getString("content"));
+                System.out.println(museo.getNombre());
+
+
+                listaDeMuseos.insertarMuseo(museo);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
         }
-
         return listaDeMuseos;
     }
 }

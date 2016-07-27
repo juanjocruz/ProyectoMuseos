@@ -11,7 +11,7 @@ import android.widget.ImageView;
  * Created by Dell_09_027-PC on 21/07/2016.
  */
 
-public class JSONAsyncTaskActivity extends AppCompatActivity {
+public class JSONAsyncTask extends AppCompatActivity {
 
 
     @Override
@@ -22,6 +22,8 @@ public class JSONAsyncTaskActivity extends AppCompatActivity {
                 LeerJSON lectorJSON = new LeerJSON();
 
                 lectorJSON.execute("http://datos.gijon.es/doc/cultura-ocio/museos.json");
+
+
 
     }
 }

@@ -8,19 +8,19 @@ import java.util.Vector;
 public class ListaDeMuseos {
 
 
-    private Vector<Museo> listaNoticias;
+    private Vector<Museo> listaMuseos;
 
 
     public ListaDeMuseos() {
-        this.listaNoticias = new Vector<Museo>();
+        this.listaMuseos= new Vector<Museo>();
     }
 
-    public Vector<Museo> getNoticias() {
-        return this.listaNoticias;
+    public Vector<Museo> getMuseo() {
+        return this.listaMuseos;
     }
 
-    public void insertarNoticia(Museo museo) {
-        listaNoticias.add(museo);
+    public void insertarMuseo(Museo museo) {
+        listaMuseos.add(museo);
     }
 
 
